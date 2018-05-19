@@ -1,0 +1,14 @@
+#!/usr/bin/with-contenv bash
+
+# `flexget daemon` runs all tasks in the config every hour by default, for more
+# options see https://flexget.com/Plugins/Daemon/scheduler.
+#
+# `--autoreload-config` reloads the config *before* running the tasks, not
+# when the configuration actually changes.
+#
+configfile=%%configfile%%
+s6-setuidgid abc /usr/bin/flexget \
+    -c /config/$configfile \
+    --loglevel "${FLEXGET_LOG_LEVEL:-debug}" \
+    --logfile "/config/$(echo $configfile | sed 's/\.yml/.log/g')" \
+    daemon start --autoreload-config
