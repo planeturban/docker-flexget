@@ -5,10 +5,9 @@ ENV PYTHONIOENCODING="UTF-8"
 
 # Copy local files.
 COPY etc/ /etc
+COPY templates /var/lib/templates
 RUN chmod -v +x \
-    /etc/cont-init.d/*  \
-    /etc/services.d/*/run
+    /etc/cont-init.d/*  
 
 # Ports and volumes.
-EXPOSE 5050/tcp
 VOLUME /config

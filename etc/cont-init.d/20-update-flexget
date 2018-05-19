@@ -3,12 +3,25 @@
 pip install -U pip
 # Make sure to install setuptools version >=36 to avoid a race condition, see:
 # https://github.com/pypa/setuptools/issues/951
-pip install -U setuptools>=36
-pip install -U urllib3[socks]
-pip install -U chardet
-pip install -U irc_bot
-pip install -U rarfile
 
+if [ ! -z "UPDATE_FLEXGET" ]
+then
+	fup="-U"
+fi
+if [ ! -z "UPDATE_PACKAGES" ]
+then
+	pup="-U"
+fi
+
+
+pip install $pup setuptools>=36
+pip install $pup urllib3[socks]
+pip install $pup chardet
+pip install $pup irc_bot
+pip install $pup rarfile
+if [ ! -z "$PIP_PACKAGES" ]; then
+	pip install $pup $PIP_PACKAGES
+fi
 
 # Install flexget last (it might force specific versions of other packages).
-pip install -U flexget
+pip install $fup flexget
