@@ -3,13 +3,16 @@
 pip install -U pip
 # Make sure to install setuptools version >=36 to avoid a race condition, see:
 # https://github.com/pypa/setuptools/issues/951
-
+pup=""
+fup=""
 if [ ! -z "UPDATE_FLEXGET" ]
 then
+	echo "Updating flexget."
 	fup="-U"
 fi
 if [ ! -z "UPDATE_PACKAGES" ]
 then
+	echo "Updating pip packages."
 	pup="-U"
 fi
 
