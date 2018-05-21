@@ -1,25 +1,8 @@
 # planeturban/docker-flexget
 
-Read all about FlexGet [here](http://www.flexget.com/#Description).
+Read all about FlexGet [here](http://www.flexget.com/#Description) 
 
-If you do not have a configuration already, you can look around starting off with something like this [config.yml](https://github.com/cpoppema/docker-flexget/blob/master/sample_config.yml):
-```
-web_server: yes
-
-schedules:
-  - tasks: '*'
-    interval:
-      minutes: 1
-
-tasks:
-  test task:
-    rss: http://myfavoritersssite.com/myfeed.rss
-    series:
-      - My Favorite Show
-```
-Put this file in your data/config folder as `config.yml`.
-
-For a much better FlexGet config.yml example take a look at the bottom of [this page](http://flexget.com/Cookbook/Series/SeriesPresetMultipleRSStoTransmission).
+This container launches multiple instances of flexget, just drop your config files in your config directory; all includes (such as secrets) should be placed in a directory since one can't run those. 
 
 ## Usage
 
