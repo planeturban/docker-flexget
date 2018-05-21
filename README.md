@@ -17,7 +17,7 @@ docker create \
     -p 5050:5050 \
     -v <path to data>:/config \
     -v <path to downloads>:/downloads \
-    cpoppema/docker-flexget
+    planeturban/docker-flexget
 ```
 
 This container is based on phusion-baseimage with ssh removed. For shell access whilst the container is running do `docker exec -it flexget /bin/bash`.
