@@ -14,7 +14,6 @@ docker create \
     -e PIP_PACKAGES="extra packages to install"
     -e UPDATE_FLEXGET="true"
     -e UPDATE_PACKAGES="true"
-    -p 5050:5050 \
     -v <path to data>:/config \
     -v <path to downloads>:/downloads \
     planeturban/docker-flexget
