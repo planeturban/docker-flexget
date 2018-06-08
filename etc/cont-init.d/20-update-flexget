@@ -5,12 +5,12 @@ pip install -U pip
 # https://github.com/pypa/setuptools/issues/951
 pup=""
 fup=""
-if [ ! -z "UPDATE_FLEXGET" ]
+if [ ! -z $UPDATE_FLEXGET ]
 then
 	echo "Updating flexget."
 	fup="-U"
 fi
-if [ ! -z "UPDATE_PACKAGES" ]
+if [ ! -z $UPDATE_PACKAGES ]
 then
 	echo "Updating pip packages."
 	pup="-U"
