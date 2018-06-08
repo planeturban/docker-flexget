@@ -1,13 +1,10 @@
 #!/bin/bash
+rm -rf /etc/services.d/flexget-*
 for i in /config/*.yml 
 do
 	file=$(echo $i | sed 's#/config/##g')
 	instance=$(echo $file | sed 's#\.yml##g')
-	if [ ! -d /etc/services.d/flexget-$instance ]
-	then
-		mkdir -p /etc/services.d/flexget-$instance
-		sed 's/%%configfile%%/'$file'/g' /var/lib/templates/run > /etc/services.d/flexget-$instance/run 
-		chmod +x /etc/services.d/flexget-$instance/run
-	fi		
-
+	mkdir -p /etc/services.d/flexget-$instance
+	sed 's/%%configfile%%/'$file'/g' /var/lib/templates/run > /etc/services.d/flexget-$instance/run 
+	chmod +x /etc/services.d/flexget-$instance/run
 done
