@@ -22,7 +22,7 @@ pip install $pup urllib3[socks]
 pip install $pup chardet
 pip install $pup irc_bot
 pip install $pup rarfile
-if [ ! -z "$PIP_PACKAGES" ]; then
+if [ ! -z $PIP_PACKAGES ]; then
 	pip install $pup $PIP_PACKAGES
 fi
 
