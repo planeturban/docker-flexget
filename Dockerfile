@@ -11,3 +11,5 @@ RUN chmod -v +x \
 
 # Ports and volumes.
 VOLUME /config
+
+EXPOSE 5050
