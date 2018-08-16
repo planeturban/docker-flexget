@@ -1,5 +1,6 @@
 #!/bin/bash
 rm -rf /etc/services.d/flexget-*
+if ls /config/*.yml 1> /dev/null 2>&1; then
 for i in /config/*.yml 
 do
 	file=$(echo $i | sed 's#/config/##g')
@@ -8,3 +9,4 @@ do
 	sed 's/%%configfile%%/'$file'/g' /var/lib/templates/run > /etc/services.d/flexget-$instance/run 
 	chmod +x /etc/services.d/flexget-$instance/run
 done
+fi
