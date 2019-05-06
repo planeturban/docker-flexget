@@ -2,6 +2,8 @@ FROM lsiobase/alpine.python:3.7
 
 # Set python to use utf-8 rather than ascii.
 ENV PYTHONIOENCODING="UTF-8"
+ENV UPDATE_FLEXGET="0"                                                                                                                                                                                                             
+ENV UPDATE_PIP="0"     
 
 # Copy local files.
 COPY etc/ /etc
