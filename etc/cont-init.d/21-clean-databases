@@ -6,3 +6,5 @@ do
 	flexget -c $i database vacuum
 done
 fi
+# 'fulfix' for first startup.
+chown abc: /config/*
